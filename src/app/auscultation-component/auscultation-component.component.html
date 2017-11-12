@@ -1,0 +1,51 @@
+<div class="container-fluid" style="padding:2.5%">
+  <div class="row">
+    <form [formGroup]="form" (ngSubmit)="formSubmit()">
+
+      <div class="row">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4">
+          <div class="form-group">
+            <input type="text" class="form-control" formControlName="patientId" placeholder="Patient ID">
+          </div>
+        </div>
+        <div class="col-sm-4"></div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-4">
+          <div class="form-group">
+            <label for="chiefComplaint">Chief Complaint</label>
+            <input type="text" class="form-control" formControlName="chiefComplaint">
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="form-group">
+            <label for="diseases">Diseases</label>
+            <select name="diseases" id="diseases" formControlName="diseases" class="form-control">
+              <option *ngFor="let disease of diseases" [value]="disease.id">{{ disease.text }}</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="form-group">
+            <label for="position">Position</label>
+            <select name="position" id="position" formControlName="position" class="form-control">
+              <option *ngFor="let position of positions" [value]="position.id">{{position.text}}</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4">
+          
+        </div>
+        <div class="col-sm-4"></div>
+      </div>
+
+      <p>{{form.value | json}}</p>
+    </form>
+  </div>
+</div>
