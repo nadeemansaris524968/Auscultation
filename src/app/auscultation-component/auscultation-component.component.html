@@ -31,7 +31,7 @@
           <div class="form-group">
             <label for="position">Position</label>
             <select name="position" id="position" formControlName="position" class="form-control">
-              <option *ngFor="let position of positions" [value]="position.id">{{position.text}}</option>
+              <option *ngFor="let position of positions" [value]="position.id">{{ position.text }}</option>
             </select>
           </div>
         </div>
@@ -40,11 +40,30 @@
       <div class="row">
         <div class="col-sm-4"></div>
         <div class="col-sm-4">
-          
+          <div class="form-group">
+            <label for="patientReport">Patient Report</label>
+            <textarea name="patientReport" id="patientReport" formControlName="patientReport" class="form-control" cols="30" rows="10"
+              style="resize: none">
+              </textarea>
+          </div>
         </div>
         <div class="col-sm-4"></div>
       </div>
 
+      <div class="row">
+        <div class="col-sm-4">
+          <div class="form-group">
+            <label for="recordings">Attach Auscultation Recordings</label>
+            <input type="file" multiple accept="audio/wav" class="form-control" (change)="onFileChange($event)" #fileInput>
+            <button type="button" class="btn btn-sm btn-default" (click)="clearFile()">clear file</button>
+          </div>
+        </div>
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4"></div>
+      </div>
+      <button type="submit" class="btn btn-success">Submit
+        <i class="fa fa-spinner fa-spin fa-fw" *ngIf="loading"></i>
+      </button>
       <p>{{form.value | json}}</p>
     </form>
   </div>
