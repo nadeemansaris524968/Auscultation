@@ -19,7 +19,7 @@ export class ParentService {
 
   post(resource){
     return this.http.post(this.url, JSON.stringify(resource))
-    .map(response => console.log(response.text.toString()))
+    .map(response => response.json())
     .catch(this.handleError);
   }
 
