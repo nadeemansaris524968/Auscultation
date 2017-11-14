@@ -5,47 +5,47 @@
       <div class="row">
         <div class="col-sm-4"></div>
         <div class="col-sm-4">
-          <div class="form-group">
+          <!-- <div class="form-group">
             <input type="text" class="form-control" formControlName="patientId" placeholder="Patient ID">
-          </div>
+          </div> -->
         </div>
         <div class="col-sm-4"></div>
       </div>
 
       <div class="row">
         <div class="col-sm-4">
-          <div class="form-group">
+          <!-- <div class="form-group">
             <label for="chiefComplaint">Chief Complaint</label>
             <input type="text" class="form-control" formControlName="chiefComplaint">
-          </div>
+          </div> -->
         </div>
         <div class="col-sm-4">
-          <div class="form-group">
+          <!-- <div class="form-group">
             <label for="diseases">Diseases</label>
-            <select name="diseases" id="diseases" formControlName="diseases" class="form-control">
+            <select multiple name="diseases" id="diseases" formControlName="diseases" class="form-control">
               <option *ngFor="let disease of diseases" [value]="disease.id">{{ disease.text }}</option>
             </select>
-          </div>
+          </div> -->
         </div>
         <div class="col-sm-4">
-          <div class="form-group">
+          <!-- <div class="form-group">
             <label for="position">Position</label>
             <select name="position" id="position" formControlName="position" class="form-control">
               <option *ngFor="let position of positions" [value]="position.id">{{ position.text }}</option>
             </select>
-          </div>
+          </div> -->
         </div>
       </div>
 
       <div class="row">
         <div class="col-sm-4"></div>
         <div class="col-sm-4">
-          <div class="form-group">
+          <!-- <div class="form-group">
             <label for="patientReport">Patient Report</label>
             <textarea name="patientReport" id="patientReport" formControlName="patientReport" class="form-control" cols="30" rows="10"
               style="resize: none">
               </textarea>
-          </div>
+          </div> -->
         </div>
         <div class="col-sm-4"></div>
       </div>
@@ -54,7 +54,7 @@
         <div class="col-sm-4">
           <div class="form-group">
             <label for="recordings">Attach Auscultation Recordings</label>
-            <input type="file" multiple accept="audio/wav" class="form-control" (change)="onFileChange($event)" #fileInput>
+            <input type="file" multiple accept="image/png, image/jpeg" class="form-control" (change)="onFileChange($event)" #fileInput>
             <button type="button" class="btn btn-sm btn-default" (click)="clearFile()">clear file</button>
           </div>
         </div>
